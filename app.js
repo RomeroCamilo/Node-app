@@ -1,45 +1,22 @@
 //importing our functions and variables from other files in the app.
-const data = require('./names')
-const functions = require('./utils')
+const data = require('./extra/names')
+const functions = require('./extra/utils')
 
 //loading our express library we installed. 
 const express = require('express');
+//creating app with express server.
 const app = express();
 
-//functions.printData(data.user)
+console.log("Successfully connected to port 3000!")
 
-//creating our server.
-const http = require('http');
+//function when the user requests this url page.
+app.get('/',(request,response) =>{
+    response.send(`<h1>Testing</h1>`);
+    response.end();
+}
+);
 
-const server = http.createServer((request,respond)=>{
-    
-    //based on the page link we request, we will respond.
-    if(request.url === '/'){
-        respond.end(`
-        <body style="background-color:silver">
-            <h1 style="color:red"> Home Page </h1>
-            <a href="/about"><button>About Page</home></a>
-        </body>
-        `)
-    }
-    else if(request.url === '/about'){
-        respond.end(`
-        <body style="background-color:crimson">
-            <h1>About me page</h1>
-            <a href="/"><button>Home Page</home></a>
-        </body>
-        `)
-    }
-    else{
-        respond.end(`
-        <h1>This Link does not exist!</h1>
-        <h2>Please go to a valid page</h2>
-        <a href="/"><button>Home Page</home></a>
-        <a href="/about"><button>About Page</home></a>
-        `)
-    }
-})
+//listening to requests on port 3000.
+app.listen(3000);
 
-console.log("Port 3000 successfully connected.")
 
-server.listen(3000);
