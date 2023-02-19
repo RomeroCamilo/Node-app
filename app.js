@@ -2,8 +2,9 @@
 const data = require('./names')
 const functions = require('./utils')
 
-//loading our lodash library we installed. 
-const _ = require('lodash');
+//loading our express library we installed. 
+const express = require('express');
+const app = express();
 
 //functions.printData(data.user)
 
