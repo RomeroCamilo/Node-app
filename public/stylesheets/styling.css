@@ -1,5 +1,6 @@
 body{
     background-color: rgba(32,33,36,1);
+    color:white;
 }
 
 .container{
@@ -37,6 +38,10 @@ label{
 
 .title{
     color:black;
+}
+
+a{
+    text-decoration: none;
 }
 
 
