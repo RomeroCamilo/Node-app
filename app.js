@@ -11,9 +11,7 @@ app.set('view engine','ejs');
 //linking our static assets (stylesheets, images, scripts, etc from the public folder.)
 app.use(express.static(path.join(__dirname,'public')));
 
-console.log("Successfully connected to port 3000!")
-
-//function when the user requests this url page.
+//function when the user requests a url page.
 app.get('/',(request,response) =>{
     response.render("index");
     response.end();
@@ -22,5 +20,7 @@ app.get('/',(request,response) =>{
 
 //listening to requests on port 3000.
 app.listen(3000);
+
+console.log("Successfully connected to port 3000!")
 
 
