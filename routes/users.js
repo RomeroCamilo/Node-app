@@ -8,8 +8,8 @@ const router = express.Router();
 //routing to our home page when the user requests this url route.
 router.get('/',(request,response)=>{
     //rendering home.html
-    response.render("home");
-    response.end();
+    //response.render('home');
+    response.end('In progress... Come back later.');
 })
 
 //exporting all our routes.
