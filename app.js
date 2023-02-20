@@ -3,32 +3,6 @@ const express = require('express');
 //creating app with express server.
 const app = express();
 
-//connecting to mysql.
-const bodyParser = require('body-parser');
-const mysql = require('mysql2/promise');
-const pool  = mysql.createPool({
-  connectionLimit : 10,
-  host            : 'localhost',
-  user            : 'root',
-  password        : 'Champion2118!',
-  database        : 'login'
-});
-
-
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(express.json());
-
-pool.getConnection((err, connection) => {
-    if (err) {
-      console.error('Error connecting to database: ' + err.stack);
-      //return;
-    }
-    else{
-        console.log("Successfully connected to mySQL.");
-    }
-});
-
 const path = require('path');
 
 //loading ejs library to render html when requested specific url routes.
