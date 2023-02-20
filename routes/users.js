@@ -14,7 +14,7 @@ const pool  = mysql.createPool({
   database        : 'login'
 });
 
-//Utilized to render html.
+//Utilized to parse form data.
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(express.json());
 
