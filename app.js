@@ -37,9 +37,6 @@ app.set('view engine','ejs');
 //linking our static assets (stylesheets, images, scripts, etc from the public folder.)
 app.use(express.static(path.join(__dirname,'public')));
 
-//getting our user data.
-let {users} = require('./data.js');
-
 //parse form data.
 app.use(express.urlencoded({extended:false}));
 
@@ -50,41 +47,17 @@ app.get('/',(request,response) =>{
 }
 );
 
-//function that will lead us to the sign up page.
-app.get('/signup',(request,response)=>{
-    response.render('signup');
-    response.end();
-});
-
-
-//function that will handle post request for signing up new user.
-app.post('/added', async (request,response)=>{
-
-    const user = request.body.user;
-    const password = request.body.password;
-
-    //const connection = await pool.getConnection();
-    //const [rows, fields] = await connection.execute('SELECT * FROM users');
-    //connection.release();
-    //response.json(rows);
-
-    await pool.query('INSERT into users (username, password) VALUES (?,?)',[user,password]
-    );
-    
-    console.log(`Inserted user ${user} with email ${password}`);
-    response.end(`Succesfully signed up!`);
-    
-})
-
 //linking our url routes from users.js
 const userRouter = require('./routes/users');
+//linking our url routes from posts.js
+const userRouterPosts = require('./routes/posts');
 
 //mounting our router starting with '/home' to all our url routes in users.js
 app.use('/home',userRouter);
+//mounting our router starting with '/post' to all our url routes in users.js
+app.use('/post',userRouterPosts);
 
 //listening to requests on port 3000.
 app.listen(3000);
 
-console.log("Successfully connected to port 3000!")
-
-
+console.log("Successfully connected to port 3000!");
