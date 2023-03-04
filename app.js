@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended:false}));
 app.get('/',(request,response) =>{
     response.render("index");
     response.end();
-}
+    }
 );
 
 //linking our url routes from users.js
@@ -28,7 +28,7 @@ const userRouterPosts = require('./routes/posts');
 
 //mounting our router starting with '/home' to all our url routes in users.js
 app.use('/home',userRouter);
-//mounting our router starting with '/post' to all our url routes in users.js
+//mounting our router starting with '/post' to all our url routes in posts.js
 app.use('/post',userRouterPosts);
 
 //listening to requests on port 3000.

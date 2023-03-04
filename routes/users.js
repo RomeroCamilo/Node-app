@@ -23,7 +23,7 @@ router.get('/',(request,response)=>{
     //rendering home.html
     //response.render('home');
     response.end('In progress... Come back later.');
-})
+});
 
 //function that will lead us to the sign up page.
 router.get('/signup',(request,response)=>{

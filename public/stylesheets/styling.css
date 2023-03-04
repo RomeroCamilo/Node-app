@@ -4,7 +4,7 @@ body{
 }
 
 .container{
-    background-color: silver;
+    background-color: rgb(50, 65, 76);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,6 @@ body{
     width: 300px;
     height: 450px;
     border-radius: 10px;
-
 }
 
 label{
