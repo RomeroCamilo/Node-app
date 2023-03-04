@@ -25,6 +25,8 @@ router.get('/',(request,response)=>{
     response.end('In progress... Come back later.');
 });
 
+
+
 //function that will lead us to the sign up page.
 router.get('/signup',(request,response)=>{
     response.render('signup');
@@ -32,7 +34,7 @@ router.get('/signup',(request,response)=>{
 });
 
 //function that will lead us to the sign up page.
-router.get('/loggedin',(request,response)=>{
+router.get('/login',(request,response)=>{
   response.end("Successful");
 });
 

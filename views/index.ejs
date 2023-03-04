@@ -4,18 +4,22 @@
     <!--Linking our CSS-->
     <link rel="stylesheet" href="/stylesheets/styling.css">
 
+    <script src="/javascripts/login.js"></script>
+
 </header>
     <body>
         <div class="container">
+            <!--Onsubmit will check for if the fields are empty or not.-->
+            <form id="login" onsubmit="return validateForm()" class="container" action="/post/login" method="POST">
             <h1 class="title">LOGIN PAGE</h1>
             <label for="user">Username</label>
             <input id="user" class="textboxStyle" type="text">
             <label for="password">Password</label>
             <input id ="password" class="textboxStyle" type="text">
             <div class="buttons">
-                <button class="buttonStyle" >LOGIN</button>
-                <a href="/home/signup"><button class= "buttonStyle" >SIGNUP</button></a>
+                <a href="/home/login"><button type ="submit" class= "buttonStyle">LOGIN</button></a>
+                <a href="/home/signup"><button type ="button" class= "buttonStyle" >SIGNUP</button></a>
             </div>
-        </div>
+            </form>
     </body>
 </html>

@@ -62,17 +62,15 @@ router.post('/added', async (request,response)=>{
       response.status(500).json({ message: 'Server Error' });
     }
 
-    /*
-    console.log('User does not exist!');
-        console.log(`Inserted user ${user} with email ${password}`);
-        response.end(`${user} has succesfully signed up!`);
-        pool.query('INSERT into users (username, password) VALUES (?,?)',[user,password]);
-
-*/
     //const connection = await pool.getConnection();
     //const [rows, fields] = await connection.execute('SELECT * FROM users');
     //connection.release();
     //response.json(rows);
+});
+
+//function that will lead us to the sign up page.
+router.post('/login',(request,response)=>{
+  response.end("Successful");
 });
 
 //exporting our post router urls.
