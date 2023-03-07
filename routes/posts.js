@@ -61,14 +61,9 @@ router.post('/added', async (request,response)=>{
         console.error(error);
         response.status(500).json({ message: 'Server Error' });
       }
-
-    //const connection = await pool.getConnection();
-    //const [rows, fields] = await connection.execute('SELECT * FROM users');
-    //connection.release();
-    //response.json(rows);
 });
 
-//function that will lead us to the sign up page.
+//function that will check wheter user creditnals is valid or not.
 router.post('/login', async (request,response)=>{
 
     const user = request.body.user;
@@ -103,8 +98,6 @@ router.post('/login', async (request,response)=>{
         console.error(error);
         response.status(500).json({ message: 'Server Error' });
       }
-
-//response.end("Successful");
 });
 
 //exporting our post router urls.

@@ -3,11 +3,12 @@
     <meta charset="UTF-8">
     <!--Linking our CSS-->
     <link rel="stylesheet" href="/stylesheets/styling.css">
+    <script src="/javascripts/login.js"></script>
 </header>
     <body>
         <div>
             <!--FORM THAT WILL POST REQUESTS FOR SIGNUP.-->
-            <form class="container" action="/post/added" method="POST">
+            <form class="container" onsubmit="return validateForm()" action="/post/added" method="POST">
                 <h1 class="title">SIGNUP PAGE</h1>
                 <label for="user">Username</label>
                 <input class="textboxStyle" id="user" name="user" type="text">
