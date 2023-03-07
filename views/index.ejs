@@ -13,11 +13,11 @@
             <form id="login" onsubmit="return validateForm()" class="container" action="/post/login" method="POST">
             <h1 class="title">LOGIN PAGE</h1>
             <label for="user">Username</label>
-            <input id="user" class="textboxStyle" type="text">
+            <input id="user" name="user" class="textboxStyle" type="text">
             <label for="password">Password</label>
-            <input id ="password" class="textboxStyle" type="text">
+            <input id ="password" name="password" class="textboxStyle" type="text">
             <div class="buttons">
-                <a href="/home/login"><button type ="submit" class= "buttonStyle">LOGIN</button></a>
+                <button type ="submit" class= "buttonStyle">LOGIN</button>
                 <a href="/home/signup"><button type ="button" class= "buttonStyle" >SIGNUP</button></a>
             </div>
             </form>
