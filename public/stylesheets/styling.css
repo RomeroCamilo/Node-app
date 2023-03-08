@@ -1,11 +1,10 @@
 body{
     background-color: rgb(226, 25, 25);
-    color:white;
     background-image: url('/img/login2.jpg');;
 }
 
 .container{
-    background-color: silver;
+    background-color: #0C2D48;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,10 +19,11 @@ body{
 }
 
 label{
-    color:black;
+    color:orange;
     font-size: 18px;
     font-weight: bold;
 }
+
 
 .textboxStyle{
     margin:15px;
@@ -37,7 +37,7 @@ label{
 }
 
 .title{
-    color:black;
+    color:orangered;
 }
 
 a{
