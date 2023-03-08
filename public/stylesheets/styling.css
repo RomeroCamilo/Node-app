@@ -1,6 +1,7 @@
 body{
     background-color: rgb(226, 25, 25);
     color:white;
+    background-image: url('/img/login2.jpg');;
 }
 
 .container{
@@ -63,4 +64,11 @@ a{
 
 .buttonStyle:hover{
     opacity:.5;
+}
+
+img{
+    background-repeat: no-repeat;
+    max-width: 100%;
+	height: auto;
+   
 }
