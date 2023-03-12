@@ -91,7 +91,7 @@ router.post('/login', async (request,response)=>{
       else 
       {
         console.log('Invalid login. Try again');
-        response.json(`Invalid login`);
+        response.json(`Invalid login.`);
         //await pool.query('INSERT into users (username, password) VALUES (?,?)',[user,password]);
       }
       } catch (error) {

@@ -1,7 +1,6 @@
 body{
-    background-color: rgb(226, 25, 25);
-    background-image: url('/img/login2.jpg');
-
+    background-color: rgb(130, 115, 33);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .container{
