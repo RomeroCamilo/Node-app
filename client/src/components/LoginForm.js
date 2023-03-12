@@ -1,6 +1,7 @@
 //LOG IN FORM COMPONENT
 import React, { useState, useEffect } from 'react';
 
+
 function LoginForm() {
 
     //stating the var and the setter for username
@@ -32,7 +33,7 @@ function LoginForm() {
         return;
       }
       
-      //Trying a post request to login.
+      //Post request to log-in
       try {
         const response = await fetch('/post/login', {
           method: 'POST',
