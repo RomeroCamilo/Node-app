@@ -1,10 +1,13 @@
-body{
+.bodyLog{
     background-color: rgb(130, 115, 33);
     background-image: url("../img/login2.jpg");
     background-size: cover;
     font-family: 'Courier New', Courier, monospace;
-}
+  }
 
+.bodyColor{
+    background-color: red;
+}
 
 .container{
     background-color: #0C2D48;
