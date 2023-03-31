@@ -1,7 +1,7 @@
 //LOG IN FORM COMPONENT
-import React, { useState, useEffect } from 'react';
+import React, { useState,  } from 'react';
 
-import {Router, Routes, Route, Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //importing my stylesheet.
 import styles from '../stylesheets/login.module.css';
@@ -38,6 +38,7 @@ function LoginForm() {
         return;
       }
       
+
       //Post request to log-in.
       //only can use await in an async function.
       try {
@@ -57,6 +58,7 @@ function LoginForm() {
         else if(data === "Invalid login."){
           alert("Login failed. Try again")
         }
+       
         console.log(data);
       } catch (error) {
         console.error(error);

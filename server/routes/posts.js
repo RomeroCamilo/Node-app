@@ -20,12 +20,14 @@ const pool  = mysql.createPool({
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(express.json());
 
+
 //routing to our home page when the user requests this url route.
 router.post('/', async (request,response)=>{
     //rendering home.html
     //response.render('home');
     response.end('In progress... Come back later.');
 });
+
 
 //function that will handle post request for signing up new user.
 router.post('/added', async (request,response)=>{
@@ -48,21 +50,23 @@ router.post('/added', async (request,response)=>{
   
       // if the count is greater than 0, the username already exists
       if (rows[0].count > 0) {
-        response.json(`Username ${user} already exists`);
+        response.json(`Username already exists.`);
       } 
       //the username is available so we signup.
       else 
       {
+        await pool.query('INSERT into users (username, password) VALUES (?,?)',[user,password]);
         console.log('User does not exist!');
         console.log(`Inserted user ${user} with password ${password}`);
-        response.json(`${user} has succesfully signed up!`);
-        await pool.query('INSERT into users (username, password) VALUES (?,?)',[user,password]);
+        response.json(`Succesfully signed up!`);
+
       }
       } catch (error) {
         console.error(error);
         response.status(500).json({ message: 'Server Error' });
       }
 });
+
 
 //function that will check wheter user creditnals is valid or not.
 router.post('/login', async (request,response)=>{
@@ -92,7 +96,7 @@ router.post('/login', async (request,response)=>{
       else 
       {
         console.log('Invalid login. Try again');
-        response.json(`Invalid login.`);
+        response.json(`Invalid login.`); 
         //await pool.query('INSERT into users (username, password) VALUES (?,?)',[user,password]);
       }
       } catch (error) {
