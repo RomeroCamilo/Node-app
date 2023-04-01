@@ -1,10 +1,14 @@
 //LOG IN FORM COMPONENT
 import React, { useState, useEffect } from 'react';
 
-import {Link} from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
+
 
 //importing my stylesheet.
 import styles from '../stylesheets/signup.module.css';
+
+//importing LoginForm component.
+import LoginForm from '../components/LoginForm';
 
 
 function SignUp() {
@@ -36,9 +40,12 @@ function SignUp() {
     }
   }
 
+  const navigate = useNavigate(); //use navigate hook.
+
   //function to handle validation and then do a post request to our express server.
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     
     //input validation
     validation(username,password);
@@ -60,7 +67,8 @@ function SignUp() {
         alert("Username already exists.");
       }
       else if(data === `Succesfully signed up!`){
-        alert("Signed up!")
+        alert("Sign up succesful! Going back to home page.")
+        navigate('/'); // if login is succesful, we will navigate to the home page.
       }
   
       console.log(data);
@@ -68,6 +76,7 @@ function SignUp() {
       console.error(error);
     }
   };
+
   
     //returing the form component with the script above with styling
     //onChange updates the stored name/password value as usertypes.
