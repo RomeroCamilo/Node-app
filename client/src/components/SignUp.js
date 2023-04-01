@@ -23,10 +23,8 @@ function SignUp() {
     setPassword(event.target.value);
   };
 
-  //function to handle validation and then do a post request to our express server.
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    
+  //input valiadation
+  const validation = (username,password) =>{
     //user validation
     if(username === ''){
       alert("Username field empty");
@@ -36,8 +34,14 @@ function SignUp() {
       alert("Password field empty");
       return;
     }
+  }
 
- 
+  //function to handle validation and then do a post request to our express server.
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
+    //input validation
+    validation(username,password);
     
     //Post request to log-in.
     //only can use await in an async function.
